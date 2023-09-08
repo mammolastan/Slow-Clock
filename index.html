@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <link
+      href="style.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="clock">
+      <div class="clock-face">
+        <div class="hand time-hand"></div>
+      </div>
+    </div>
+
+    <script>
+      const hand = document.querySelector(".time-hand");
+      function setHandPosition() {
+        const d = new Date();
+        const hours = d.getHours();
+        const minutes = d.getMinutes();
+        const seconds = d.getSeconds();
+
+        // Currently set to display a 12-hour clock. Change to 86400 for 24-hour
+        var pctDayElapsed = (hours * 3600 + minutes * 60 + seconds) / 43200;
+
+        const rotation = pctDayElapsed * 360;
+
+        hand.style.transform = `rotate(${rotation}deg)`;
+      }
+      setHandPosition();
+      const interval = setInterval(setHandPosition, 10000);
+    </script>
+  </body>
+</html>
