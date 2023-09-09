@@ -4,7 +4,7 @@ html {
   font-family: "helvetica neue";
   text-align: center;
   font-size: 10px;
-  background: url(img/bg/brown-background-natural-sand-texture.jpg);
+  background: black;
 }
 
 body {
@@ -24,15 +24,15 @@ body {
   margin: 50px auto;
   position: relative;
   padding: 2rem;
-  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #efefef,
-    inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 10px black,
+    0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .clock-face {
   position: relative;
   width: 100%;
   height: 100%;
-  transform: translateY(-3px); /* account for the height of the clock hands */
+  transform: translateY(-3px);
 }
 .hand {
   width: 6px;
@@ -48,7 +48,7 @@ body {
 .background {
   height: 100vh;
   width: 100vw;
-  background: url(img/bg/brown-background-natural-sand-texture.jpg);
+  background: white;
   background-size: contain;
   position: absolute;
 }
@@ -89,5 +89,4 @@ body {
 
 .buttonPill.sandy {
   background: url(img/bg/brown-background-natural-sand-texture.jpg);
-
 }
