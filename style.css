@@ -1,49 +1,93 @@
 html {
-    background: #2678af;
-    background-size: cover;
-    font-family: "helvetica neue";
-    text-align: center;
-    font-size: 10px;
-    background: url(img/bg/brown-background-natural-sand-texture.jpg);
-    background-size: cover;
-  }
+  background: #2678af;
+  background-size: cover;
+  font-family: "helvetica neue";
+  text-align: center;
+  font-size: 10px;
+  background: url(img/bg/brown-background-natural-sand-texture.jpg);
+}
 
-  body {
-    margin: 0;
-    font-size: 2rem;
-    display: flex;
-    flex: 1;
-    min-height: 100vh;
-    align-items: center;
-  }
+body {
+  margin: 0;
+  font-size: 2rem;
+  display: flex;
+  flex: 1;
 
-  .clock {
-    width: 30rem;
-    height: 30rem;
-    border: 20px solid white;
-    border-radius: 50%;
-    margin: 50px auto;
-    position: relative;
-    padding: 2rem;
-    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #efefef,
-      inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
-  }
+  align-items: center;
+}
 
-  .clock-face {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform: translateY(
-      -3px
-    ); /* account for the height of the clock hands */
-  }
-  .hand {
-    width: 6px;
-    height: 50%;
-    background: black;
-    position: absolute;
-    left: 50%;
-    transform-origin: 100% 100%;
-    transition: all 0.05s;
-    transition-timing-function: ease-in-out;
-  }
+.clock {
+  width: 30rem;
+  height: 30rem;
+  border: 20px solid white;
+  border-radius: 50%;
+  margin: 50px auto;
+  position: relative;
+  padding: 2rem;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #efefef,
+    inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-3px); /* account for the height of the clock hands */
+}
+.hand {
+  width: 6px;
+  height: 50%;
+  background: black;
+  position: absolute;
+  left: 50%;
+  transform-origin: 100% 100%;
+  transition: all 0.05s;
+  transition-timing-function: ease-in-out;
+}
+
+.background {
+  height: 100vh;
+  width: 100vw;
+  background: url(img/bg/brown-background-natural-sand-texture.jpg);
+  background-size: contain;
+  position: absolute;
+}
+
+.blur {
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(2px);
+}
+
+.dashboard {
+  z-index: 100;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: none;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+.buttonPill {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+.buttonPill.dark {
+  background-color: black;
+  color: white;
+}
+
+.buttonPill.sandy {
+  background: url(img/bg/brown-background-natural-sand-texture.jpg);
+
+}

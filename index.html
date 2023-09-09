@@ -5,8 +5,19 @@
       rel="stylesheet"
     />
   </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 
   <body>
+    <div class="dashboard">
+      <h1>Options</h1>
+      <button class="buttonPill dark">Dark</button>
+      <button class="buttonPill light">Light</button>
+      <button class="buttonPill sandy">Sandy</button>
+    </div>
+
+    <div class="background">
+      <div class="blur"></div>
+    </div>
     <div class="clock">
       <div class="clock-face">
         <div class="hand time-hand"></div>
@@ -15,21 +26,82 @@
 
     <script>
       const hand = document.querySelector(".time-hand");
+
+      // Set time hand
       function setHandPosition() {
+        // Get new date for right now, set hour/min/sec
         const d = new Date();
         const hours = d.getHours();
         const minutes = d.getMinutes();
         const seconds = d.getSeconds();
 
-        // Currently set to display a 12-hour clock. Change to 86400 for 24-hour
+        // Get percentage of day elapsed to far, calculated in seconds. Currently set to display a 12-hour clock. Change to 86400 for 24-hour
         var pctDayElapsed = (hours * 3600 + minutes * 60 + seconds) / 43200;
 
+        // Determine how much rotation to apply to the clock hand
         const rotation = pctDayElapsed * 360;
 
+        // Apply rotation to clock hand
         hand.style.transform = `rotate(${rotation}deg)`;
       }
+      function displayDashboard() {
+        $(".dashboard").fadeToggle();
+      }
+
       setHandPosition();
       const interval = setInterval(setHandPosition, 10000);
+
+      // Begin jQuery Ready Function
+      $(document).ready(function () {
+        // Apply keypress events
+        $(document).keypress(function (event) {
+          const key = event.which;
+
+          // 'o' to display Dashboard
+          if (key === 111 || key === 79) {
+            displayDashboard();
+          }
+          // 'f' for fullscreen
+          if (key === 102 || key === 70) {
+            document.documentElement.requestFullscreen();
+          }
+        });
+
+        // Double click for options
+        $(document).dblclick(function (event) {
+          displayDashboard();
+        });
+
+        // Set background changes click actions
+        $(".dashboard button").click(function (event) {
+          console.log(event);
+          console.log($(event.target).hasClass("light"));
+          let background = $(".background").css("background");
+          let hand = $(".hand").css("background");
+          let clock = $(".clock").css("border-color");
+
+          if ($(event.target).hasClass("light")) {
+            background = "#FFF";
+            hand = "#000";
+          }
+          if ($(event.target).hasClass("dark")) {
+            background = "#000";
+            hand = "#fff";
+            clock = "#1a1a1a";
+          }
+          if ($(event.target).hasClass("sandy")) {
+            background =
+              "url(img/bg/brown-background-natural-sand-texture.jpg)";
+            hand = "#000";
+            clock = "#fff";
+          }
+
+          $(".hand").css("background", hand);
+          $(".background").css("background", background);
+          $(".clock").css("border-color", clock);
+        });
+      });
+      // End jQuery Ready
     </script>
   </body>
 </html>
