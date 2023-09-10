@@ -21,6 +21,7 @@ This way of showing the time is inspired by the original clocks that were based 
 
 ## TODO
 
+- Style/display enhancements
 - Show/hide hour indicators
 - Add video background options
 - User - select among soundscapes
