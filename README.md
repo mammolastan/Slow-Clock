@@ -21,11 +21,11 @@ This way of showing the time is inspired by the original clocks that were based 
 
 ## TODO
 
+- Show/hide hour indicators
 - Add video background options
 - User - select among soundscapes
 - User - select time zone
-- User - Option to show 12hour/24hour
 - User - Option to choose details to show on hover
   - show/hide digital time. Or show on hover
   - show/hide hours
-- Full screen
+
