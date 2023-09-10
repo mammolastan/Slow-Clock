@@ -31,6 +31,7 @@ function changeTheme() {
   if ($(event.target).hasClass("light")) {
     background = "#FFF";
     hand = "#000";
+    clock = "#FFF";
   }
   if ($(event.target).hasClass("dark")) {
     background = "#000";
