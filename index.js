@@ -85,6 +85,25 @@ $(document).ready(function () {
   $(document).dblclick(function (event) {
     toggleDashboard();
   });
+  // Set double tap for options
+  let tapped = false;
+
+  window.addEventListener(
+    "touchstart",
+    (e) => {
+      if (!tapped) {
+        tapped = setTimeout(function () {
+          tapped = null;
+        }, 300); //wait 300ms
+      } else {
+        clearTimeout(tapped);
+        e.preventDefault();
+        tapped = null;
+        toggleDashboard();
+      }
+    },
+    { passive: false }
+  );
 
   //   Close Dashboard with click
   $(".dashboard").on("click", function (e) {
@@ -104,7 +123,7 @@ $(document).ready(function () {
     }
   });
 
-  // Open modal
+  // Open intro modal
   $("#introModal").modal("show");
 });
 // End jQuery Ready
