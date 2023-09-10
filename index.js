@@ -55,7 +55,6 @@ function changeTheme() {
 
 // Begin interval to set clock hand
 function beginInterval(totalSeconds) {
-  console.log(intervalSetHand);
   if (intervalSetHand) {
     clearInterval(intervalSetHand);
   }
@@ -86,6 +85,12 @@ $(document).ready(function () {
     toggleDashboard();
   });
 
+  //   Close Dashboard with click
+  $(".dashboard").on("click", function (e) {
+    if (e.target !== this) return;
+    toggleDashboard();
+  });
+
   // Set background changes click actions
   $(".dashboard .group.theme button").click(changeTheme);
 
@@ -97,5 +102,8 @@ $(document).ready(function () {
       beginInterval(86400);
     }
   });
+
+  // Open modal
+  $("#introModal").modal("show");
 });
 // End jQuery Ready

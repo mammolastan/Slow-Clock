@@ -1,4 +1,4 @@
-<html>
+<html data-bs-theme="dark">
   <head>
     <link
       href="style.css"
@@ -6,6 +6,17 @@
     />
   </head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"
+  ></script>
 
   <body>
     <div class="dashboard">
@@ -22,6 +33,65 @@
         <button class="buttonPill">24-hour clock</button>
       </div>
     </div>
+
+    <!-- Intro Modal Begin-->
+    <div
+      class="modal fade"
+      id="introModal"
+      tabindex="-1"
+      aria-labelledby="introModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1
+              class="modal-title fs-5"
+              id="introModalLabel"
+            >
+              Intro
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h2>Slow clock App</h2>
+            <p>
+              Welcome to the Slow Clock app. <br />This app is currently in
+              development.<br />
+              Currently available usage outlined below.
+            </p>
+            <h2>Usage</h2>
+            <p>Press the 'o' key or double-click to open the options menu.</p>
+            <p>Press the 'f' key to enter full-screen.</p>
+            <hr />
+            <h2>What is a slock clock?</h2>
+            <p>
+              The core of the slow watch is the 24 hour one-hand concept.
+              <br /><br />
+              A 24 hour one-hand clock allows you to see the entire day in one
+              view and experience time in natural way. This fundamentally
+              changes the way you look at the clock and can promote enhanced
+              consciousness about the progression of your day.
+              <br /><br />
+              This way of showing the time is inspired by the original clocks
+              that were based on the sun clock. Those early clocks indeed had
+              only one hand and displayed all 24 hours. You can still see them
+              on some old church towers. Only when people’s lives became busier
+              and busier they felt a need to create this unnatural split of the
+              day in two 12-hour halves and break each hour down in to 60
+              minutes. That’s when we started to chase the minutes and get
+              stressed by time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Intro Modal End -->
 
     <div class="background">
       <div class="blur"></div>

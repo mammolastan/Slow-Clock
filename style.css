@@ -100,3 +100,7 @@ body {
 .buttonPill.sandy {
   background: url(img/bg/brown-background-natural-sand-texture.jpg);
 }
+
+.modal {
+  font-size: 125%;
+}
