@@ -68,6 +68,16 @@ body {
   background: rgba(0, 0, 0, 0.8);
   color: white;
 }
+.dashboard .group {
+  background: #333bcc4a;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 75%;
+}
+
+.dashboard h5 {
+  margin: 0 auto 20px auto;
+}
 
 .buttonPill {
   background-color: #ddd;

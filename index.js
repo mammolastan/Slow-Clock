@@ -53,14 +53,14 @@ function changeTheme() {
   toggleDashboard();
 }
 
-// Change 12-hour to 24-hour click and vice-versa
+// Begin interval to set clock hand
 function beginInterval(totalSeconds) {
   console.log(intervalSetHand);
   if (intervalSetHand) {
     clearInterval(intervalSetHand);
   }
-  intervalSetHand = setInterval(setHandPosition(totalSeconds), 10000);
   setHandPosition(totalSeconds);
+  intervalSetHand = setInterval(setHandPosition(totalSeconds), 10000);
 }
 
 beginInterval(43200);
@@ -87,6 +87,15 @@ $(document).ready(function () {
   });
 
   // Set background changes click actions
-  $(".dashboard button").click(changeTheme);
+  $(".dashboard .group.theme button").click(changeTheme);
+
+  //  Set click actions for clock standard options
+  $(".dashboard .group.standard button").click(function (event) {
+    if (event.target.innerHTML.indexOf("12") > -1) {
+      beginInterval(43200);
+    } else {
+      beginInterval(86400);
+    }
+  });
 });
 // End jQuery Ready
