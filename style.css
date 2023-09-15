@@ -1,4 +1,8 @@
 html {
+  --backgroundPrimary: #fff;
+}
+
+html {
   background: #2678af;
   background-size: cover;
   font-family: "helvetica neue";
@@ -7,7 +11,7 @@ html {
   background: black;
 }
 
-body {git
+body {
   margin: 0;
   display: flex;
   flex: 1;
@@ -45,11 +49,18 @@ body {git
   transition-timing-function: ease-in-out;
 }
 
+.clock label {
+  position: absolute;
+  inset: 20px;
+  text-align: center;
+  transform: rotate(calc(var(--i) * (360deg / 12)));
+}
+
 .background {
   height: 100vh;
   width: 100vw;
   background: white;
-  background-size: contain;
+  background-size: cover;
   position: absolute;
 }
 
@@ -99,4 +110,46 @@ body {git
 
 .buttonPill.sandy {
   background: url(img/bg/brown-background-natural-sand-texture.jpg);
+}
+
+/* Set Clock Theme Stylings */
+
+/* Dark Theme */
+[data-clockTheme="dark"] .background {
+  background: #000;
+}
+
+[data-clockTheme="dark"] .clock {
+  border-color: #1a1a1a;
+}
+
+[data-clockTheme="dark"] .hand {
+  background: hsl(0 80% 30% / 1);
+}
+
+/* Light Theme */
+[data-clockTheme="light"] .background {
+  background: #fff;
+}
+
+[data-clockTheme="light"] .clock {
+  border-color: #fff;
+}
+
+[data-clockTheme="light"] .hand {
+  background: #000;
+}
+
+/* Sandy Theme */
+[data-clockTheme="sandy"] .background {
+  background: url(img/bg/brown-background-natural-sand-texture.jpg);
+  background-size: cover;
+}
+
+[data-clockTheme="sandy"] .clock {
+  border-color: #fff;
+}
+
+[data-clockTheme="sandy"] .hand {
+  background: #000;
 }

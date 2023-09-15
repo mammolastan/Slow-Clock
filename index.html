@@ -1,6 +1,5 @@
 <html data-bs-theme="dark">
   <head>
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
@@ -23,9 +22,24 @@
       <h1>Options</h1>
       <div class="group theme">
         <h5>Theme</h5>
-        <button class="buttonPill dark">Dark</button>
-        <button class="buttonPill light">Light</button>
-        <button class="buttonPill sandy">Sandy</button>
+        <button
+          class="buttonPill dark"
+          data-clockTheme="dark"
+        >
+          Dark
+        </button>
+        <button
+          class="buttonPill light"
+          data-clockTheme="light"
+        >
+          Light
+        </button>
+        <button
+          class="buttonPill sandy"
+          data-clockTheme="sandy"
+        >
+          Sandy
+        </button>
       </div>
       <div class="group standard">
         <h5>Clock standard</h5>
@@ -98,6 +112,20 @@
     </div>
     <div class="clock">
       <div class="clock-face">
+        <!-- <div>
+          <label style="--i: 1"><span>1</span></label>
+          <label style="--i: 2"><span>2</span></label>
+          <label style="--i: 3"><span>3</span></label>
+          <label style="--i: 4"><span>4</span></label>
+          <label style="--i: 5"><span>5</span></label>
+          <label style="--i: 6"><span>6</span></label>
+          <label style="--i: 7"><span>7</span></label>
+          <label style="--i: 8"><span>8</span></label>
+          <label style="--i: 9"><span>9</span></label>
+          <label style="--i: 10"><span>10</span></label>
+          <label style="--i: 11"><span>11</span></label>
+          <label style="--i: 12"><span>12</span></label>
+        </div> -->
         <div class="hand time-hand"></div>
       </div>
     </div>

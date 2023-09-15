@@ -24,32 +24,10 @@ function toggleDashboard() {
 }
 
 function changeTheme() {
-  let background = $(".background").css("background");
-  let hand = $(".hand").css("background");
-  let clock = $(".clock").css("border-color");
-
-  if ($(event.target).hasClass("light")) {
-    background = "#FFF";
-    hand = "#000";
-    clock = "#FFF";
-  }
-  if ($(event.target).hasClass("dark")) {
-    background = "#000";
-    hand = "hsl(0 80% 30% / 1)";
-    clock = "#1a1a1a";
-  }
-  if ($(event.target).hasClass("sandy")) {
-    background = "url(img/bg/brown-background-natural-sand-texture.jpg)";
-    hand = "#000";
-    clock = "#fff";
-  }
-
-  $(".hand").css("background", hand);
-  $(".background").css({
-    background: background,
-    backgroundSize: "cover",
-  });
-  $(".clock").css("border-color", clock);
+  $("html").attr(
+    "data-clockTheme",
+    event.target.getAttribute("data-clockTheme")
+  );
 
   toggleDashboard();
 }
